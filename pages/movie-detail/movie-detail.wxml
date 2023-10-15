@@ -1,0 +1,61 @@
+<view class="container">
+  <image mode="aspectFill" class="head-img" src="{{movie.image}}"></image>
+  <view class="head-img-hover">
+    <text class="main-title">{{movie.title}}</text>
+    <text class="sub-title">{{movie.subtitle}}</text>
+    <view class="like">
+      <text class="highlight-font">{{movie.wishCount}}</text>
+      <text class="plain-font">人喜欢</text>
+      <text class="highlight-font">{{movie.commentsCount}}</text>
+      <text class="plain-font">条评论</text>
+    </view>
+    <image bind:tap="onViewPost" class="movie-img" src="{{movie.image}}"></image>
+  </view>
+  <view class="summary">
+    <view class="original-title">
+      <text>{{movie.title}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+      <view class="score-container">
+        <l-rate disabled="{{true}}" score="{{movie.rating}}" size="22"></l-rate>
+        <text class="average">{{movie.average}}</text>
+      </view>
+    </view>
+    <view class="flex-row">
+      <text class="mark">导演</text>
+      <text>{{movie.directors}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">影人</text>
+      <text>{{movie.casts}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">类型</text>
+      <text>{{movie.genres}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text>剧情简介</text>
+    <text class="synopsis-font">{{movie.summary}}</text>
+  </view>
+  <view class="hr"></view>
+  <scroll-view  scroll-x enable-flex class="carts">
+    <text class="cast-font">影人</text>
+    <view class="casts-container">
+      <block wx:for="{{movie.castsInfo}}">
+        <view class="cast-container">
+          <image class="cast-img" src="{{item.img}}"></image>
+          <text>{{item.name}}</text>
+        </view>  
+        <!-- 此处的重复是有意为之，为了体现内容超出页面之后左右滑动的效果 -->
+        <view class="cast-container">
+          <image class="cast-img" src="{{item.img}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+        <!-- 此处的重复是有意为之，为了体现内容超出页面之后左右滑动的效果 -->
+      </block>
+    </view>
+  </scroll-view>
+</view>

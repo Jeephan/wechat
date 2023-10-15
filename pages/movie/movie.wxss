@@ -1,0 +1,25 @@
+/* pages/movie/movie.wxss */
+page{
+  background-color: #f2f2f2;
+}
+.movie-list{
+  margin-bottom: 30rpx;
+}
+.ex-search{
+  height: 80rpx !important;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx 30rpx;
+  justify-content: space-between;
+}
+.movie{
+  margin-bottom: 20rpx;
+}
+/* 使用flex布局后，页面只有两个元素时，中间出现空白的解决方案 */
+.container::after{
+  content: '';
+  width: 200rpx;
+}

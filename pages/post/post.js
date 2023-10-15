@@ -1,0 +1,89 @@
+import {postList} from "../../data/data.js"
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    res:{
+      text:'123'
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  async onLoad(options) {
+    // console.log(postList)
+    // wx.setStorageSync('flag', true)
+    // wx.setStorageSync('flag', false)
+    // wx.removeStorageSync('flag')
+    // wx.setStorageSync('key', '112233')
+    // wx.clearStorageSync() 
+    // const flag = await wx.getStorage({
+    //   key:'key',
+    // })
+
+    // console.log(flag)
+    this.setData({
+      postList
+    })
+  },
+  onGotoDetail(e){
+      console.log(e)
+      const pid = e.currentTarget.dataset.pid | e.detail.pid
+      // console.log(pid)
+      wx.navigateTo({
+        url: '/pages/post-detail/post-detail?pid='+pid,
+      })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  }
+})

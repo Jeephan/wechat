@@ -1,0 +1,17 @@
+<view class="post" bind:tap="onTap">
+  <view class="post-author-date">
+    <image src="{{res.avatar}}" class="post-author-avatar" catch:tap="onMaxImage"></image>
+    <text class="post-date">{{res.date}}</text>
+  </view>
+  <text class="post-title">{{res.title}}</text>
+  <image src="{{res.imgSrc}}" class="post-image"></image>
+  <view class="view-text"><text class="post-content">{{res.content}}</text></view>
+  <view class="post-view">
+    <!-- <image src="/images/icon/star.png" class="post-view-image"></image> -->
+    <l-icon class="post-view-image" name="favor" size="28"></l-icon>
+    <text class="post-view-text">{{res.collection}}</text>
+    <!-- <image src="/images/icon/view.png" class="post-view-image"></image> -->
+    <l-icon class="post-view-image" name="eye" size="32"></l-icon>
+    <text class="post-view-text">{{res.reading}}</text>
+  </view>
+</view>

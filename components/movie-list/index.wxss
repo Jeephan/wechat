@@ -1,0 +1,17 @@
+.container{
+  padding: 32rpx 28rpx;
+  background-color: #ffffff;
+}
+.title-containrt{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.movie-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+.more-text{
+  color: #095fff;
+}

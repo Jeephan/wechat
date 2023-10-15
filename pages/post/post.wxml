@@ -1,0 +1,20 @@
+<!-- 顶部轮播图 -->
+<view>
+  <swiper indicator-dots="true" autoplay="true" interval="1000" circular>
+    <swiper-item>
+      <image data-pid="0" bind:tap="onGotoDetail" src="/images/lpl.png">
+      </image>
+    </swiper-item>
+    <swiper-item>
+      <image data-pid="3" bind:tap="onGotoDetail" src="/images/bestplayers.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-pid="4" bind:tap="onGotoDetail" src="/images/jumpfly.png">
+      </image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 文章列表 -->
+<block wx:for="{{postList}}" wx:key="index">
+  <post res="{{item}}" bind:posttap="onGotoDetail"></post>
+</block>

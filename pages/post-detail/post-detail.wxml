@@ -1,0 +1,20 @@
+<!-- 根据点击不同的文章的 id 来获取对应的文章 -->
+<image class="head-image" src="{{postData.imgSrc}}"></image>  <!--顶部图片-->
+<image wx:if="{{!isPlaying}}" bind:tap="playAudio" class="audio" src="/images/music/music-start.png"></image>  <!--音乐播放图片-->
+<image wx:else bind:tap="stopAudio" class="audio" src="/images/music/music-stop.png"></image> <!--音乐暂停图片-->
+<view class="author-date">    <!--头像-时间日期 模块-->
+  <image class="avatar" src="{{postData.avatar}}"></image>
+  <text class="author">{{postData.author}}</text>
+  <text class="const-text">发表于</text>
+  <text class="date">{{postData.dateTime}}</text>
+</view>
+<text class="title">{{postData.title}}</text>   <!--文章标题-->
+<view class="tool">
+  <view class="horizon"></view>               <!--分割线-->
+  <view class="cicle">                      <!--两个功能图标-->
+    <image wx:if="{{!collected}}" bind:tap="onCollect" class="collection-img" src="/images/icon/collection-anti.png"></image>
+    <image wx:else bind:tap="onCollect" class="collection-img" src="/images/icon/collection.png"></image>
+    <image bind:tap ="onShare" class="share-img" src="/images/icon/share.png"></image>
+  </view>
+</view>                                       <!--文章详细信息内容-->
+<view class="view-detail"><text class="detail">{{postData.detail}}</text></view>
